@@ -4,7 +4,6 @@
 <img alt="Logo" height="50" src="https://raw.githubusercontent.com/grocy/grocy/master/public/img/logo.svg?sanitize=true" />
 <h2>ERP beyond your fridge</h2>
 <h3>Grocy is a web-based self-hosted groceries & household management solution for your home</h3>
-<em><h4>This is a hobby project by <a href="https://berrnd.de">Bernd Bestel</a></h4></em>
 </div>
 
 -----
@@ -20,10 +19,7 @@ See the website. &rarr; <https://grocy.info>
 
 ## Questions / Help / Bug Reports / Feature Requests
 
-- General help and usage questions &rarr;  [r/grocy subreddit](https://www.reddit.com/r/grocy)
-- Bug Reports and Feature Requests &rarr; [Issue Tracker](https://github.com/grocy/grocy/issues/new/choose)
-
-_Please don't send me private messages or call me regarding anything Grocy. I check the issue tracker and the subreddit pretty much daily, but don't provide any support beyond that._
+- Bug Reports and Feature Requests &rarr; [Issue Tracker](https://github.com/nullishamy/open-grocy/issues/new/choose)
 
 ## Community contributions
 
@@ -31,12 +27,8 @@ See the website for a list of community contributed Add-ons / Tools. &rarr; [htt
 
 ## How to install
 
-> Checkout [Grocy Desktop](https://github.com/grocy/grocy-desktop), if you want to run Grocy without having to manage a webserver just like a normal (Windows) desktop application.
->
-> Directly download the [latest release](https://releases.grocy.info/latest-desktop) - the installation is nothing more than just clicking 2 times "next".
-
 Grocy is technically a pretty simple PHP application, so the basic notes to get it running are:
-- Unpack the [latest release](https://releases.grocy.info/latest)
+- Unpack the [latest release](https://github.com/nullishamy/open-grocy/releases/latest)
 - Copy `config-dist.php` to `data/config.php` + edit to your needs
 - Ensure that the `data` directory is writable
 - The webserver root should point to the `public` directory
@@ -61,7 +53,7 @@ See the website for more installation guides and troubleshooting help. &rarr; [h
 
 ## How to update
 
-- Overwrite everything with the [latest release](https://releases.grocy.info/latest) while keeping the `data` directory
+- Overwrite everything with the [latest release](https://github.com/nullishamy/open-grocy/releases/latest) while keeping the `data` directory
 - Check `config-dist.php` for new configuration options and add them to your `data/config.php` where appropriate (the default values from `config-dist.php` will be used for not in `data/config.php` defined settings)
 
 If you run Grocy on Linux, there is also `update.sh` (remember to make the script executable (`chmod +x update.sh`) and ensure that you have `unzip` installed) which does exactly this and additionally creates a backup (`.tgz` archive) of the current installation in `data/backups` (backups older than 60 days will be deleted during the update).
@@ -80,10 +72,6 @@ Also any translation which once reached a completion level of 70 % ([`strings` r
 
 _RTL languages are unfortunately not yet supported._
 
-## Motivation
-
-A household needs to be managed. Before Grocy I did this (for almost 10 years) using my first self written software (a C# Windows forms application) and with a bunch of Excel sheets. The software was a pain to use at the end and Excel is Excel. So I searched for and tried different things for a (very) long time, nothing 100 % fitted, so this is my aim for a "complete household management"-thing. ERP your fridge!
-
 ## Things worth to know
 
 ### REST API
@@ -97,8 +85,6 @@ The web frontend uses exactly this API for pretty much everything. So everything
 Some fields (with a barcode icon above) also allow to select a value by scanning a barcode. It works best when your barcode reader prefixes every barcode with a letter which is normally not part of a item name (I use a `$`) and sends a `TAB` after a scan.
 
 Additionally it's also possible to use your device camera to scan a barcode by using the camera button on the right side of the corresponding input field (powered by [ZXing](https://github.com/zxing-js/library), totally offline / client-side camera stream processing, please note due to browser security restrictions, this only works when serving Grocy via a secure connection (`https://`)). [Here](https://www.youtube.com/watch?v=veezFX4X1JU) and [there](https://www.youtube.com/watch?v=Y5YH6IJFnfc) are quick video demos of that.
-
-_My personal recommendation: Use a USB barcode laser scanner. They are cheap and work 1000 % better, faster, under any lighting condition and from any angle._
 
 ### Barcode lookup via external services
 
